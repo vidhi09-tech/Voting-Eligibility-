@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Voting Eligibility</title>
+  </head>
+  <body data-type="scroll" data-target="#main-nav" id="home">
+    <nav
+      class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark"
+      id="main-nav"
+    >
+      <div class="container">
+        <a href="{{ url_for('index_page') }}" class="navbar-brand">Voting is not only our right—it is our power!!</a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="{{ url_for('index_page') }}" class="nav-link">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- home section -->
+    <header id="home-section">
+      <div class="dark-overlay">
+        <div class="home-inner container">
+          <div class="row pt-5">
+            <div class="col-lg-8 d-none d-lg-block pt-5">
+
+                    <h3 class="display-8">Welcome to the gateway of democratic empowerment.</h3>
+                        <p class="lead">Unlock the gateway to democracy effortlessly. Your name, age, and country are the keys to unraveling your eligibility to vote. As you provide these simple details, the curtain lifts, revealing the verdict on your participation in shaping the future. Remember, your data is not just input; it's the compass guiding you through the democratic landscape, helping you navigate your role in the grand tapestry of governance.
+                        </p>
+                    <a href="https://en.wikipedia.org/wiki/Voting_age" class="btn btn-outline-secondary">Find Out More</a>
+
+            </div>
+            <div class="col-lg-4 py-5">
+              <div class="card bg-primary text-center card-form">
+                <div class="card-body">
+                  <h3>Check Voting Eligibility</h3>
+                  <p>Please fill out this form to know your Eligibility</p>
+                  <form action="{{ url_for('login') }}" method="post">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        placeholder="Full Name"
+                        name="Full Name"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control form-control-lg"
+                        placeholder="Email"
+                        name="Email"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        class="form-control form-control-lg"
+                        placeholder="Age"
+                        name="Age"
+                      />
+                    </div>
+
+                    <div class="form-group">
+
+                      <select id="dropdown" name="dropdown" class="custom-select">
+                            {% for option in dropdown_options %}
+                                <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="form-group">
+                      <input
+                        class="btn btn-outline-light btn-block mt-2"
+                        type="submit"
+                        value="Submit"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+  <style>
+      body {
+        background-color: #212121;
+        color: white
+      }
+  </style>
+</html>
